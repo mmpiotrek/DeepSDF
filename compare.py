@@ -45,7 +45,7 @@ def print_metrics(data):
     for k, v in data.items():
         print(f'{k}: {v}')
 
-source_path = '/home/piotr/Desktop/ProRoc/DeepSDF/PPRAI_Result_noth/Meshes/Dataset_PPRAI'#  '/home/piotr/Desktop/ProRoc/DeepSDF/examples/PPRAI/Reconstructions/2000/Meshes/Dataset_PPRAI'  #  /home/piotr/Desktop/ProRoc/DeepSDF/data_PPRAI/SdfSamples/Dataset_PPRAI
+source_path = '/home/piotr/Desktop/ProRoc/DeepSDF/PPRAI_Result_noth/Meshes/Dataset_PPRAI'
 reference_path = '/home/piotr/Desktop/ProRoc/DeepSDF/others/DatasetObjectsTest'
 classess = os.listdir(source_path)
 text_to_file = []
@@ -96,30 +96,3 @@ with open('DeepSDF_metrics_5mln.txt', 'w') as f:
         f.write(f"{line}\n")
     for line in mean_result:
         f.write(f"{line}\n")
-
-
-# input_object = load_object(args.input)
-# reference_object = load_object(args.reference)
-
-# input_data = extract_data(input_object)
-# reference_data = extract_data(reference_object)
-
-# losses = {}
-
-# for m in args.metrics:
-#     if metrics.exists(m):
-#         losses[m] = metrics.calculate(input_data, reference_data, m)
-
-# print_metrics(losses)
-
-# if args.display:
-#     vis = o3d.visualization.Visualizer()
-#     visualize = list()
-#     visualize.append(input_object)
-#     visualize.append(reference_object)
-#     for x in visualize:
-#         vis.add_geometry(x)
-
-#     o3d.visualization.draw_geometries(visualize, mesh_show_back_face=True)
-#     vis.clear_geometries()
-#     vis.destroy_window()
